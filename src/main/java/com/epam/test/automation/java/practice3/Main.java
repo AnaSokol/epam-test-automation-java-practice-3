@@ -46,8 +46,18 @@ public class Main {
 
 
     public static int[][] task3(int[][] matrix) {
-        //TODO: Delete line below and write your own solution;
-        throw new UnsupportedOperationException();
-    }
-
+		int[][] matrixNew = matrix;
+        for(int i=0; i<matrix.length; i++) {
+			for (int j=0; j<matrix[i].length; j++) {
+				if (i==j) {
+					matrixNew[i][j]=matrix[i][j];
+				}else if (i>j){
+					matrixNew[i][j]=0;
+				}else if (i<j){
+					matrixNew[i][j]=1;
+				}
+			}
+	    }
+	    return matrixNew;
+    }	
 }
