@@ -18,35 +18,31 @@ public class Main {
     }
 
     
-   public static int task2(int[] array) {
+    public static int task2(int[] array) {
 		int maxNum = 0;
+		int maxIndex1 = 0;
+        int maxIndex2 = maxIndex1;
 		for (int i = 0; i < array.length-1; i++) {
 			if (array[i]>array[i+1]){
-            maxNum = array[i];
+             maxNum = array[i];
             } else {
-            maxNum = array[i+1];
+             maxNum = array[i+1];
             }
         }
-		return maxNum;
+		for(int i=0; i < array.length; i++){
+	        if(array[i] == maxNum){
+	         maxIndex1=i;
+	         break;
+	        }
+	    }
+	    for(int i=array.length-1; i>=0; i--){
+	        if(array[i] == maxNum){
+	         maxIndex2=i;
+	         break;
+	        }
+	    }
+	    return maxIndex2 - maxIndex1;
 	}
-    public int getMaxIndex(int[] array,int maxNum) {
-    	int maxIndex1 = 0;
-    	int maxIndex2 = maxIndex1;
-    	for(int i=0; i<array.length; i++){
-           if(array[i]==maxNum){
-             maxIndex1=i;
-             break;
-           }
-        }
-    	for(int i=array.length-1; i>=0; i--){
-          if(array[i]==maxNum){
-            maxIndex2=i;
-            break;
-          }
-        }
-        int result = maxIndex2 - maxIndex1;
-        return result;
-    }
 
 
     public static int[][] task3(int[][] matrix) {
