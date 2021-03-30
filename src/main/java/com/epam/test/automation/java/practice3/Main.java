@@ -17,21 +17,38 @@ public class Main {
         return result;
     }
 
-    /**
-     * <summary>
-     * Implement code according to description of task 2.
-     * </summary>
-     */
-    public static int task2(int[] array) {
-        //TODO: Delete line below and write your own solution;
-        throw new UnsupportedOperationException();
+    
+   public static int task2(int[] array) {
+		int maxNum = 0;
+		for (int i = 0; i < array.length-1; i++) {
+			if (array[i]>array[i+1]){
+            maxNum = array[i];
+            } else {
+            maxNum = array[i+1];
+            }
+        }
+		return maxNum;
+	}
+    public int getMaxIndex(int[] array,int maxNum) {
+    	int maxIndex1 = 0;
+    	int maxIndex2 = maxIndex1;
+    	for(int i=0; i<array.length; i++){
+           if(array[i]==maxNum){
+             maxIndex1=i;
+             break;
+           }
+        }
+    	for(int i=array.length-1; i>=0; i--){
+          if(array[i]==maxNum){
+            maxIndex2=i;
+            break;
+          }
+        }
+        int result = maxIndex2 - maxIndex1;
+        return result;
     }
 
-    /**
-     * <summary>
-     * Implement code according to description of task 3.
-     * </summary>
-     */
+
     public static int[][] task3(int[][] matrix) {
         //TODO: Delete line below and write your own solution;
         throw new UnsupportedOperationException();
