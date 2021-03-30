@@ -53,7 +53,7 @@ public class Main {
 					matrixNew[i][j]=matrix[i][j];
 				}else if (i>j){
 					matrixNew[i][j]=0;
-				}else if (i<j){
+				}else {
 					matrixNew[i][j]=1;
 				}
 			}
